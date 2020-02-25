@@ -1,10 +1,24 @@
 import fetch from 'isomorphic-unfetch'
 
-const Index = ({ cookie }) => <div>{`Cookie from response: ${cookie}`}</div>
 
-Index.getInitialProps = async () => {
+
+function Index({ cookie }) {
+  return (
+    <div>{`Cookie from response: ${cookie}`}</div>
+  )
+}
+
+
+
+Index.getInitialProps = async (ctx) => {
   const response = await fetch('http://localhost:3000/api/cookies')
-  const cookie = response.headers.get('set-cookie')
+  let cookie = response.headers.get('set-cookie')
+
+  if (cookie === null) {
+    ctx.res.writeHead(302, { Location: '/login' });
+    ctx.res.end();
+    return {};
+  }
 
   return { cookie }
 }
