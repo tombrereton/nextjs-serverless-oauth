@@ -12,7 +12,9 @@ const cookie = (res, name, value, options = {}) => {
     options.maxAge /= 1000
   }
 
-  res.setHeader('Set-Cookie', serialize(name, String(stringValue), options))
+  const serializedCookie = serialize(name, String(stringValue), options)
+  console.log(serializedCookie)
+  res.setHeader('Set-Cookie', serializedCookie)
 }
 
 /**

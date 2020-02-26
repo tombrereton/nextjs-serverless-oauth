@@ -1,3 +1,20 @@
+# Based on the Example Below with the following outline
+if req has cookie
+use sessionId to get token from db in getInitialProps
+use token to get playlists from soundsort api
+
+if req does not have cookie
+redirect to login
+
+if user clicks login
+and clicks authorise
+spotify sends call back to api/callback
+api/callback generates sessionId
+saves sessionId in cookie
+saves sessionId and token in db
+redirects to select
+
+---
 # API routes with middleware
 
 Next.js ships with [API routes](https://github.com/zeit/next.js#api-routes), which provide an easy solution to build your own `API`. This example shows how to implement simple `middleware` to wrap around your `API` endpoints.

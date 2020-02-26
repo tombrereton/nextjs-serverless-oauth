@@ -1,5 +1,7 @@
 export default function login(){
     return(
-        <div>Login</div>
+        <div>
+            <a href="/api/callback">Login</a>
+        </div>
     )
 }
