@@ -1,18 +1,18 @@
 # Based on the Example Below with the following outline
-if req has cookie
-use sessionId to get token from db in getInitialProps
-use token to get playlists from soundsort api
+- if req has cookie
+- use sessionId to get token from db in getInitialProps
+- use token to get playlists from soundsort api
 
-if req does not have cookie
-redirect to login
+- if req does not have cookie
+- redirect to login
 
-if user clicks login
-and clicks authorise
-spotify sends call back to api/callback
-api/callback generates sessionId
-saves sessionId in cookie
-saves sessionId and token in db
-redirects to select
+- if user clicks login
+- and clicks authorise
+- spotify sends call back to api/callback
+- api/callback generates sessionId
+- saves sessionId in cookie
+- saves sessionId and token in db
+- redirects to select
 
 ---
 # API routes with middleware
