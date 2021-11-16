@@ -7,7 +7,7 @@
     "start": "next start"
   },
   "dependencies": {
-    "aws-sdk": "^2.626.0",
+    "aws-sdk": "^2.814.0",
     "cookie": "0.4.0",
     "isomorphic-unfetch": "3.0.0",
     "next": "latest",
